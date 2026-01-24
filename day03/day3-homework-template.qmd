@@ -1,0 +1,121 @@
+---
+title: "Day 3 Homework, DST 490"
+author: "ENTER YOUR NAME HERE"
+date: "2025-01-09"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+
+```
+
+Link to google doc for instructions: [LINK](https://docs.google.com/document/d/10CQtlP3EDAUL6BjiAMgXgkk7sKr1hkVhbO_bz6BBWtw/edit?usp=sharing)
+
+
+<div style="background-color: #f0f8ff; border-left: 5px solid #007acc; padding: 10px;">
+## (20 points) Code of Ethics
+I'm interested in understanding your process for completing all the questions in this assignment. Please tell me about the tools and resources—including any use of AI—that helped you with your work. Please remember to follow the outlined [Code of Ethics](https://docs.google.com/document/d/1lMvzPTGUAaMnH0KPibShQ1ualuo8uqICCexkh8zmsW8/edit?usp=sharing).  Because our understanding of how to work with AI tools is emerging, please err on the side of including too much detail rather than too little.
+
+
+TYPE YOUR RESPONSE HERE
+
+</div>
+
+
+## (20 points) 1. Library of missing datasets
+Review the library of missing datasets: [LINK](https://github.com/MimiOnuoha/missing-datasets?tab=readme-ov-file). This project was done several years ago - and there is a running list of missing datasets: [LINK](https://github.com/MimiOnuoha/missing-datasets?tab=readme-ov-file#an-incomplete-list-of-missing-data-sets).  Can you find any datasets/sources to address that data gap? (Provide citations)  Why do you think these data weren’t collected? Are these data being suppressed due to a particular domain from the matrix of domination (provide an explanation why).
+
+TYPE YOUR RESPONSE HERE
+
+
+## (40 points) 2. New visualization for unemployment data
+Use the unemployment dataset (worked on in class) to come up with a new visualization of the data with the variables provided. The visualization should incorporate different variables than what we worked on in class. Create a data-rich visualization as possible, according to the following steps:
+
+  a. First, **ON YOUR OWN**, utilize your data wrangling and visualization skills to create a visualization.  For this first step, you are not allowed to utilize any additional websites or AI. I want to see what you can do on your own first - so make a good-faith effort to resolve any errors in your work. Note that the code chunk evaluation option is set to false (`#| eval: false`) so that the quarto file won't throw an error when rendering.^[If you are successful in making a visualization, then change the option from `false` to `true`.]
+
+```{r}
+#| eval: false
+#| message: false
+
+# Location of the excel file:
+url <- 'https://github.com/jmzobitz/HNDSDatasets/raw/refs/heads/main/data-raw/Unemployment.xlsx'
+
+
+# Name of the file to save:
+destfile <- "Unemployment.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+unemployment_data <- readxl::read_excel(destfile,
+                                 skip = 4,
+                                 sheet = 'UnemploymentMedianIncome')
+
+
+# Type your response here.
+
+```
+
+  b. Reflect on your work.  What were the errors that you received? What skills and knowledge gaps can you identify?
+
+TYPE YOUR RESPONSE HERE
+
+  c. If you have errors in your visualization, make corrections to resolve them:
+
+```{r}
+#| message: false
+
+# Location of the excel file:
+url <- 'https://github.com/jmzobitz/HNDSDatasets/raw/refs/heads/main/data-raw/Unemployment.xlsx'
+
+
+# Name of the file to save:
+destfile <- "Unemployment.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+unemployment_data <- readxl::read_excel(destfile,
+                                 skip = 4,
+                                 sheet = 'UnemploymentMedianIncome')
+
+
+# Type your response here.
+
+```
+
+  d. As you resolved the errors, what were your sources? Be sure to complete the Code of Ethics.
+    
+  e. Now I want you to modify your visualization with a different plot geom. The website [from data to viz](https://www.data-to-viz.com/) is useful for inspiration.  You may need to load / install additional libraries as needed.
+    
+```{r}
+#| message: false
+
+# Location of the excel file:
+url <- 'https://github.com/jmzobitz/HNDSDatasets/raw/refs/heads/main/data-raw/Unemployment.xlsx'
+
+
+# Name of the file to save:
+destfile <- "Unemployment.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+unemployment_data <- readxl::read_excel(destfile,
+                                 skip = 4,
+                                 sheet = 'UnemploymentMedianIncome')
+
+
+# Type your response here.
+
+```
+   
+  f. What trends do you see in the visualization? What is your explanation for these trends? 
+
+TYPE YOUR RESPONSE HERE
+
+

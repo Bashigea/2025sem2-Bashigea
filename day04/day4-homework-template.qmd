@@ -1,0 +1,41 @@
+---
+title: "Day 4 Homework, DST 490"
+author: "ENTER YOUR NAME HERE"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+
+```
+
+Link to google doc for instructions: [LINK](https://docs.google.com/document/d/1EJzhP6ncjj19dTa1KW-W2uxyBUVillyWhIsxn70Cbgk/edit?usp=sharing)
+
+
+<div style="background-color: #f0f8ff; border-left: 5px solid #007acc; padding: 10px;">
+## (20 points) Code of Ethics
+I'm interested in understanding your process for completing all the questions in this assignment. Please tell me about the tools and resources—including any use of AI—that helped you with your work. Please remember to follow the outlined [Code of Ethics](https://docs.google.com/document/d/1lMvzPTGUAaMnH0KPibShQ1ualuo8uqICCexkh8zmsW8/edit?usp=sharing).  Because our understanding of how to work with AI tools is emerging, please err on the side of including too much detail rather than too little.
+
+
+TYPE YOUR RESPONSE HERE
+
+</div>
+
+
+## (50 points) 1. Data Visualization Portfolio 1
+Using the critiques from the Data Portfolio Workshop, provide a reworked data graphic that you brought to class. 
+
+- Be sure to include your original data graphic.
+- Summarize what you learned from the critiques. How did you incorporate those comments into your revision? What lessons did you learn?
+- Briefly summarize what you revised in your new data graphic.
+- Also include a pdf of the feedback form you received in class (see above).
+
+
+TYPE YOUR RESPONSE HERE
+

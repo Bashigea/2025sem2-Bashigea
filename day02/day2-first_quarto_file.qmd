@@ -1,0 +1,63 @@
+---
+title: "YOUR FILE NAME HERE"
+author: "YOUR NAME HERE"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r, setup}
+knitr::opts_chunk$set(echo=TRUE)
+library(mdsr)
+library(tidyverse)
+#  tidy=FALSE,     # display code as typed
+#  size="small")   # slightly smaller font for code
+```
+
+# Section titles are here (you need one hashtags)
+
+## Subsections have 2 hashtags
+
+### Subsubsections have 1 hashtag
+
+-   Italics: wrap your phrase with one star (\*): I *love* DST 490!
+-   Bold: wrap your phrase with two stars (\*\*): The **class** will be awesome fun!
+
+You can wrap `R` commands in "chunks", using the syntax below
+
+**USE GLIMPSE TO PREVIEW DATASETS.**
+
+Do this:
+
+```{r}
+glimpse(mpg)
+```
+
+Not that:
+
+```{r}
+mpg
+```
+
+## Lists and check boxes
+For each statement below, if it is true, replace the empty box ("[ ]", rendered as &#x2610;) with a check mark ("[X]", rendered as &#x2611;) in the Quarto file before rendering.
+
+Choose one:
+
+- [ ] `R` is awesome.
+- [X] Why didn't you check the previous statement? `R` is still awesome.
+
+## Recreate this plot!
+
+I will show a plot on the google slides. This plot was created using the data verbs in class. Working with your partner, see if you can construct a series of pipes to recreate the plot. Here is some code to get you started:
+
+```{r}
+# Location of the excel file:
+url <- 'https://raw.githubusercontent.com/jmzobitz/HNDSDatasets/refs/heads/main/data-raw/unemployment_data.csv'
+
+input_data <- read_csv(file = url)
+
+glimpse(input_data)
+
+```

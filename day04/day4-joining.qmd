@@ -1,0 +1,63 @@
+---
+title: "YOUR FILE NAME HERE"
+author: "YOUR NAME HERE"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r, setup}
+knitr::opts_chunk$set(echo=TRUE)
+library(mdsr)
+library(tidyverse)
+#  tidy=FALSE,     # display code as typed
+#  size="small")   # slightly smaller font for code
+```
+
+## Explore!
+
+Working with your group, design a visualization that joins these two datasets together.
+
+```{r}
+# Location of the excel file:
+url <- 'https://ers.usda.gov/sites/default/files/_laserfiche/DataFiles/48747/Unemployment.xlsx?v=58453'
+
+# Name of the file to save:
+destfile <- "Unemployment.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+unemployment <- readxl::read_excel(destfile,
+                                        skip = 4,
+                                        sheet = 'UnemploymentMedianIncome')
+
+glimpse(unemployment)
+
+```
+
+```{r}
+# Location of the excel file:
+url <- 'https://ers.usda.gov/sites/default/files/_laserfiche/DataFiles/48747/Education.xlsx?v=14208'
+
+# Name of the file to save:
+destfile <- "Education.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+education <- readxl::read_excel(destfile,
+                                        skip = 3,
+                                        sheet = 'Education 1970 to 2022')
+
+glimpse(education)
+
+```
+
+Now working with your group:
+
+(1) Find a way to join the `unemployment` and `education` datasets together.
+(2) Create an informative data visualization.
+
+```{r}
+# Insert code here
+```

@@ -1,0 +1,46 @@
+---
+title: "DST 490, Day 3 In-class work"
+author: "YOUR NAME HERE"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r, setup}
+knitr::opts_chunk$set(echo=TRUE)
+library(mdsr)
+library(tidyverse)
+#  tidy=FALSE,     # display code as typed
+#  size="small")   # slightly smaller font for code
+```
+
+## Reading in Excel files
+```{r}
+# Location of the excel file:
+url <- 'https://github.com/jmzobitz/HNDSDatasets/raw/refs/heads/main/data-raw/Unemployment.xlsx'
+
+
+# Name of the file to save:
+destfile <- "Unemployment.xlsx"
+
+# Download
+curl::curl_download(url, destfile)
+unemployment_data <- readxl::read_excel(destfile,
+                                 skip = 4,
+                                 sheet = 'UnemploymentMedianIncome')
+
+glimpse(unemployment_data)
+
+```
+
+
+## Recreate this plot!
+
+I will show a plot on the google slides. This plot was created using the data verbs in class. Working with your partner, see if you can construct a series of pipes to recreate the plot.
+
+```{r}
+
+# Type response here
+
+```

@@ -1,0 +1,113 @@
+---
+title: "Day 2 Homework, DST 490"
+author: "ENTER YOUR NAME HERE"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+
+```
+
+Link to google doc for instructions: [LINK](https://docs.google.com/document/d/1ujgpHiP2Lfoq6IatNlNvOjTankYxESQIKhYMqR2sU3Y/edit?usp=sharing)
+
+
+<div style="background-color: #f0f8ff; border-left: 5px solid #007acc; padding: 10px;">
+## (20 points) Code of Ethics
+I'm interested in understanding your process for completing all the questions in this assignment. Please tell me about the tools and resources—including any use of AI—that helped you with your work. Please remember to follow the outlined [Code of Ethics](https://docs.google.com/document/d/1lMvzPTGUAaMnH0KPibShQ1ualuo8uqICCexkh8zmsW8/edit?usp=sharing).  Because our understanding of how to work with AI tools is emerging, please err on the side of including too much detail rather than too little.
+
+
+TYPE YOUR RESPONSE HERE
+
+</div>
+
+
+
+
+## (10 points) 1. Recreate this plot (new theme)
+(10 points) Finish recreating the plot shown in the instructions, plot, but customize the plot using ggplot’s theming conventions: [LINK](https://ggplot2.tidyverse.org/reference/ggtheme.html) or [LINK](https://ggplot2.tidyverse.org/reference/theme.html).  This link will also be helpful: [LINK](https://r-graphics.org/chapter-appearance)  Provide appropriate labels (and units) on each axis.
+
+```{r}
+#| message: false
+
+# Location of the csv file:
+url <- 'https://raw.githubusercontent.com/jmzobitz/HNDSDatasets/refs/heads/main/data-raw/unemployment_data.csv'
+
+unemployment_data <- read_csv(file = url)
+
+glimpse(unemployment_data)
+
+# Type your response here.
+
+```
+
+
+## (10 points) 2. Your Quarto theme
+Come up with a customized Quarto theme with your submission, and explain why you chose it. Here is some helpful information: [LINK](https://quarto.org/docs/output-formats/html-themes.html)
+
+
+TYPE YOUR RESPONSE HERE
+
+## (40 points) 3. New visualization for unemployment data
+Use the unemployment dataset (worked on in class) to come up with a new visualization of the data with the variables provided. The visualization should be fundamentally different than what we worked on in class. Create a data-rich visualization as possible, according to the following steps:
+
+  a. First, **ON YOUR OWN**, utilize your data wrangling and visualization skills to create a visualization.  For this first step, you are not allowed to utilize any additional websites or AI. I want to see what you can do on your own first - so make a good-faith effort to resolve any errors in your work. Note that the code chunk evaluation option is set to false (`#| eval: false`) so that the quarto file won't throw an error when rendering.^[If you are successful in making a visualization, then change the option from `false` to `true`.]
+
+```{r}
+#| eval: false
+#| message: false
+
+# Location of the csv file:
+url <- 'https://raw.githubusercontent.com/jmzobitz/HNDSDatasets/refs/heads/main/data-raw/unemployment_data.csv'
+
+unemployment_data <- read_csv(file = url)
+
+# Type your response here.
+
+```
+
+  b. Reflect on your work.  What were the errors that you received? What skills and knowledge gaps can you identify?
+
+TYPE YOUR RESPONSE HERE
+
+  c. If you have errors in your visualization, make corrections to resolve them:
+
+```{r}
+#| message: false
+
+# Location of the csv file:
+url <- 'https://raw.githubusercontent.com/jmzobitz/HNDSDatasets/refs/heads/main/data-raw/unemployment_data.csv'
+
+unemployment_data <- read_csv(file = url)
+
+# Type your response here.
+
+```
+
+  d. As you resolved the errors, what were your sources? Be sure to complete the Code of Ethics.
+    
+  e. Now I want you to modify your visualization with a different plot geom. The website [from data to viz](https://www.data-to-viz.com/) is useful for inspiration.  You may need to load / install additional libraries as needed.
+    
+```{r}
+#| message: false
+
+# Location of the csv file:
+url <- 'https://raw.githubusercontent.com/jmzobitz/HNDSDatasets/refs/heads/main/data-raw/unemployment_data.csv'
+
+unemployment_data <- read_csv(file = url)
+
+# Type your response here.
+
+```
+   
+  f. What trends do you see in the visualization? What is your explanation for these trends? 
+
+TYPE YOUR RESPONSE HERE
+
+
