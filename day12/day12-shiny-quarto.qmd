@@ -1,0 +1,84 @@
+---
+title: "Shiny and Quarto"
+format: 
+  html:
+    page-layout: custom
+    embed-resources: true
+server: shiny
+---
+
+```{r}
+#| context: setup
+#| message: false
+#| echo: false
+
+# Preliminaries 
+library(shiny)
+library(tidyverse)
+library(babynames)
+
+# Define the beatles
+beatles_names <- c("John", "Paul", "George", "Ringo")
+
+# Define what kids have the beatles names and are male. This will be a large data table
+Beatles <- babynames |>
+  filter(name %in% beatles_names & sex == "M")
+
+
+```
+
+### Frequency of Beatles names over time
+```{r}
+#| panel: sidebar
+
+# Input: Numeric input for years and checkbox for names ----
+      numericInput(inputId = "startyear",
+                   label = "Enter starting year",
+                   value = 1960,
+                   min = 1880,
+                   max = 2014,
+                   step = 1)   
+
+      numericInput(inputId = "endyear",
+                   label = "Enter ending year",
+                   value = 1970,
+                   min = 1881,
+                   max = 2014,
+                   step = 1)
+
+      checkboxGroupInput(inputId = 'names',
+                         label = 'Names to display:',
+                         choices = beatles_names)
+
+
+```
+
+```{r}
+#| panel: fill
+
+plotOutput("plot")   # Plot corresponds to the variable from the data table output below
+
+```
+
+```{r}
+#| context: server
+
+  # Create dynamic data frame ds that filters based on user input
+  ds <- reactive({
+    Beatles |>
+      filter(input$startyear <= year,
+             year <= input$endyear,
+             name %in% input$names)
+  })
+
+  output$plot <- renderPlot({
+
+    # Make the plot using ds as the input
+    ggplot(data=ds(),  # Note how ds is a function ds() vs ds
+           aes(x=year,y=n,color=name)
+           ) +
+      geom_line(linewidth=2)
+
+  })  # Close off renderPlot
+
+```
