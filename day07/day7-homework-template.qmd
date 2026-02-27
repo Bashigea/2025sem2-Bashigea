@@ -1,6 +1,6 @@
 ---
 title: "Day 7 Homework, DST 490"
-author: "ENTER YOUR NAME HERE"
+author: "Armand"
 date: "2026-02-08"
 format:
   html:
