@@ -1,0 +1,88 @@
+---
+title: "Day 14: Leaflet + Quarto"
+author: "John Zobitz"
+format:
+  html:
+    embed-resources: true
+editor: source
+server: shiny
+---
+
+# Preliminaries
+
+Here is a mashup of code to produce an interactive plot of zip codes for Hennepin County.
+```{r}
+#| context: setup
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(sf)     # R wrapper around GDAL/OGR
+library(leaflet)    # for fortifying shapefiles
+library(shiny)
+
+zips <- st_read(dsn = "Zip_Codes/", layer = "Zip_Codes",quiet = TRUE)
+
+municipal_boundary <- read_sf("Hennepin_County_Municipalities.geojson")
+
+# Define a function for the different colors in each zip
+zip_pal <-colorFactor(palette = "RdYlBu",
+                      domain = zips$NAME_TXT
+)
+
+
+# Define a function for the different colors in each zip
+municipal_pal <-colorFactor(palette = "RdYlBu",
+                      domain = municipal_boundary$NAME_TXT
+)
+
+```
+
+
+
+```{r}
+#| context: server
+
+# Reproject the zips data frame
+zips_reproj <- zips |>
+  st_transform('+proj=longlat +datum=WGS84')
+
+# Reproject the municipal data frame
+municipal_reproj <- municipal_boundary |>
+  st_transform('+proj=longlat +datum=WGS84')
+
+# Create the map
+map <- leaflet() |> 
+  addTiles() |> 
+  addPolygons(data = zips_reproj,
+              weight = 1,
+              color = "white",
+              fillColor = ~zip_pal(NAME_TXT),
+              fillOpacity = 0.3,
+              popup = ~NAME_TXT,
+              group = "Five digit zips") |>
+  addPolygons(data = municipal_reproj,
+                weight = 1,
+              color = "red",
+              fillColor = ~municipal_pal(NAME_TXT),
+              fillOpacity = 0.3,
+              popup = ~NAME_TXT,
+              group = "Municipal Boundary") |>
+  addLayersControl(
+    overlayGroups = c("Five digit zips", "Municipal Boundary"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+  
+
+
+
+output$plot <- renderLeaflet({
+  map 
+  })
+
+```
+
+```{r}
+#| panel: fill
+leafletOutput('plot')
+```
