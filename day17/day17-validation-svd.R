@@ -10,7 +10,8 @@ library(randomForest) # Random forests
 library(corrplot)  ## Correlation plots
 
 ### Load in the data
-load('data/employment_education_all.Rda')
+data_file <- here::here("day17","employment_education_all.Rda")
+load(data_file)
 
 
 ### Set the unemployment threshold for the model
