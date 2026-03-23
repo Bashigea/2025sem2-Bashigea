@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data-Visualization-Portfolio",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 11, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nMedian Household Income in Hennepin County\n\n\n\ndata visualization\n\nmaps\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/01_post-with-code/index.html",
@@ -18,13 +18,41 @@
     "href": "posts/00_welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\nReview the slides at this link: LINK\nOptional: You can publish this to your own github, although it does take some work. Some information is found here: LINK\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Welcome to my Data Visualization Portfolio! I’m Armand, a senior at Augsburg University studying Computer Science with minors in Data Science and Mathematics.\nThis blog will showcase my work in data visualization, exploring how data-driven approaches can be applied to real-world challenges. Stay tuned for projects highlighting everything from exploratory data analysis to interactive visualizations.\nOptional: You can publish this to your own github, although it does take some work. Some information is found here: LINK\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Armand Bashige",
     "section": "",
-    "text": "About this blog"
+    "text": "I am a senior at Augsburg University pursuing a Bachelor’s degree in Computer Science with minors in Data Science and Mathematics. I am passionate about leveraging my problem-solving skills to develop innovative solutions that create meaningful impact. With a strong foundation in Python and Java, I have hands-on experience implementing data structures, algorithms, and core software development principles. I am particularly interested in building efficient, scalable systems and applying data-driven approaches to real-world challenges."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html",
+    "href": "posts/01_my-first-code/index.html",
+    "title": "Median Household Income in Hennepin County",
+    "section": "",
+    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html#overview",
+    "href": "posts/01_my-first-code/index.html#overview",
+    "title": "Median Household Income in Hennepin County",
+    "section": "",
+    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html#key-takeaways",
+    "href": "posts/01_my-first-code/index.html#key-takeaways",
+    "title": "Median Household Income in Hennepin County",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html#key-takeaways-1",
+    "href": "posts/01_my-first-code/index.html#key-takeaways-1",
+    "title": "Median Household Income in Hennepin County",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
   }
 ]

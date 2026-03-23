@@ -2,17 +2,19 @@ project:
   type: website
 
 website:
-  title: "Data-Visualization-Portfolio"
+  title: "Armand Bashige's Portfolio"
   navbar:
     right:
       - about.qmd
+      - icon: linkedin
+        href: https://linkedin.com
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/Bashigea
+      - icon: github
+        href: https://github.com/Bashgea
 format:
   html:
-    theme: cosmo
+    theme: darkly
     css: styles.css
 
 
