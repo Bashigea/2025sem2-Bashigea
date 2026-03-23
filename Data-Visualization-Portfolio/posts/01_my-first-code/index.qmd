@@ -1,0 +1,40 @@
+---
+title: "Median Household Income in Hennepin County"
+author: "Armand Bashige"
+date: "2025-03-22"
+categories: [data visualization, maps]
+---
+
+## Overview
+
+This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county.
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| output: false
+library(tidyverse)
+library(sf)
+library(zipcodeR)
+library(tmap)
+
+zips <- st_read(dsn = "C:/Users/bashi/OneDrive/Documents/DST490/2025sem2-Bashigea/day11/shapefiles/Zip_Codes", layer = "Zip_Codes")
+
+hennepin_zips <- search_county("Hennepin","MN")
+
+small_hennepin_zips <- hennepin_zips |>
+  select(zipcode, median_household_income, post_office_city)
+
+zips_income <- zips |>
+  left_join(small_hennepin_zips, by=c("NAME_TXT"="zipcode")) |>
+  st_make_valid()
+```
+```{r}
+#| echo: false
+tm_shape(zips_income) + 
+  tm_polygons("median_household_income")
+```
+
+## Key Takeaways
+
+The map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone.

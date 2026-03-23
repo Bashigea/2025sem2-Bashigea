@@ -1,13 +1,14 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2025-02-11"
+author: "Armand Bashige"
+date: "2025-03-22"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+Welcome to my Data Visualization Portfolio! I'm Armand, a senior at Augsburg University studying Computer Science with minors in Data Science and Mathematics.
 
-Review the slides at this link: [LINK](https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide)
+This blog will showcase my work in data visualization, exploring how data-driven approaches can be applied to real-world challenges. Stay tuned for projects highlighting everything from exploratory data analysis to interactive visualizations.
+
 
 **Optional**: You can publish this to your own github, although it does take some work. Some information is found here: [LINK](https://quarto.org/docs/publishing/github-pages.html)
 

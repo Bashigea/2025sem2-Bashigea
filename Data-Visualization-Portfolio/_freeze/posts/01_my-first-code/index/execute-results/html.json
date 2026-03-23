@@ -1,0 +1,17 @@
+{
+  "hash": "6acb7b03e33af9223c9e26029961e55f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Median Household Income in Hennepin County\"\nauthor: \"Armand Bashige\"\ndate: \"2025-03-22\"\ncategories: [data visualization, maps]\n---\n\n## Overview\n\nThis visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county.\n\n::: {.cell}\n\n:::\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n## Key Takeaways\n\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone.",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
