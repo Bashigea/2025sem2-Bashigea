@@ -1,0 +1,137 @@
+---
+title: "SNAP Household Size & Children by Poverty Level"
+author: "Armand Bashige"
+date: "2026-04-03"
+categories: [data visualization, SNAP, poverty]
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+## Overview
+
+This visualization explores how household size and children share relate to SNAP 
+enrollment across Hennepin County neighborhoods in 2024. We split neighborhoods 
+into four poverty groups to see how these patterns change as poverty increases.
+
+The key question we are trying to answer is:
+
+**Are larger and poorer families actually enrolling in SNAP at the rates we would expect?**
+
+---
+
+## Visualization
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Load the Hennepin County SNAP dataset
+df <- read.csv("../../../../hennepin-county-data-project-2026-tai/data_private/HennepinCounty_SNAP_MFIP_Estimates_Tract_RevA.csv")
+
+# Convert columns to numeric and extract year
+df$SNAP_cases_n    <- as.numeric(df$SNAP_cases)
+df$SNAP_people_n   <- as.numeric(df$SNAP_people)
+df$SNAP_children_n <- as.numeric(df$SNAP_children)
+df$Year            <- df$YearMonth %/% 100
+
+# Aggregate to annual tract averages
+annual <- df |>
+  group_by(GIS_Tract, Year) |>
+  summarise(
+    SNAP_cases    = mean(SNAP_cases_n,    na.rm = TRUE),
+    SNAP_people   = mean(SNAP_people_n,   na.rm = TRUE),
+    SNAP_children = mean(SNAP_children_n, na.rm = TRUE),
+    poverty_pop   = mean(p_125_povertyE,  na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  filter(!is.na(SNAP_cases), !is.na(SNAP_people),
+         !is.na(SNAP_children), !is.na(poverty_pop))
+
+# Calculate derived variables
+annual$snap_hh_size     <- annual$SNAP_people   / ifelse(annual$SNAP_cases  == 0, NA, annual$SNAP_cases)
+annual$children_share   <- annual$SNAP_children / ifelse(annual$SNAP_people == 0, NA, annual$SNAP_people)
+annual$snap_per_poverty <- annual$SNAP_cases    / ifelse(annual$poverty_pop == 0, NA, annual$poverty_pop)
+
+# Filter to 2024 and build poverty quartile labels
+df_2024 <- annual |>
+  filter(Year == 2024) |>
+  filter(!is.na(snap_hh_size), !is.na(children_share)) |>
+  mutate(
+    pov_q     = ntile(poverty_pop, 4),
+    pov_label = case_when(
+      pov_q == 1 ~ "Q1 Low poverty",
+      pov_q == 2 ~ "Q2",
+      pov_q == 3 ~ "Q3",
+      pov_q == 4 ~ "Q4 High poverty"
+    ),
+    pov_label = factor(pov_label, levels = c("Q1 Low poverty","Q2","Q3","Q4 High poverty")),
+    snap_take_up = pmin(snap_per_poverty, 1.5)
+  )
+
+# Plot
+ggplot(df_2024, aes(x = children_share * 100, y = snap_hh_size,
+                    color = snap_take_up, size = SNAP_cases)) +
+  geom_point(alpha = 0.6) +
+  geom_hline(yintercept = 2.27, linetype = "dashed", color = "#555555",
+             linewidth = 0.5, alpha = 0.5) +
+  scale_color_gradientn(
+    colors = c("lightblue", "blue", "orangered", "brown4"),
+    name   = "SNAP cases\nper poverty\npopulation",
+    limits = c(0, 1.5),
+    labels = c("0", "0.5", "1.0", "1.5+")
+  ) +
+  scale_size_continuous(
+    name   = "Monthly\nSNAP cases",
+    range  = c(0.8, 6),
+    breaks = c(50, 200, 600)
+  ) +
+  facet_wrap(~pov_label, nrow = 1) +
+  labs(
+    title = "SNAP Household Size & Children by Poverty Levels (2024)",
+    subtitle = "Each point = one tract  |  Color = SNAP take-up rate  |  Dashed line = ACS county avg HH size (2.27)",
+    caption = "Sources: Hennepin County SNAP/MFIP Estimates  |  283 tracts  |  Implied HH size = SNAP people ÷ SNAP cases",
+    x = "% of SNAP recipients who are children",
+    y = "Average household size (people per SNAP case)"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title        = element_text(face = "bold", size = 13, color = "midnightblue"),
+    plot.subtitle     = element_text(size = 9, color = "gray45"),
+    plot.caption      = element_text(size = 7.5, color = "gray65"),
+    strip.text        = element_text(face = "bold", size = 9.5),
+    legend.title      = element_text(size = 8.5),
+    legend.text       = element_text(size = 8),
+    legend.key.height = unit(0.6, "cm"),
+    panel.grid.minor  = element_blank(),
+    plot.background   = element_rect(fill = "white", color = NA)
+  )
+```
+
+## How to Read This Plot
+
+The plot is split into four panels from left to right based on poverty level — 
+Q1 is the least poor and Q4 is the most poor.
+
+- **X axis** — what percentage of SNAP recipients in that neighborhood are children. 
+Higher means more kids are getting SNAP
+- **Y axis** — average household size. Higher means bigger families are on SNAP
+- **Dashed line** — the county average household size of 2.27 people per household
+- **Dot color** — the SNAP take-up rate. Light blue means few eligible people are 
+enrolling, while orange and red means most eligible people are enrolling
+- **Dot size** — how many SNAP cases are in that neighborhood
+
+## Key Finding
+
+As poverty increases from Q1 to Q4, households get larger and have more children. 
+However, the dots in Q4 are mostly blue — meaning even the poorest neighborhoods 
+with the biggest families are not enrolling at the rates we would expect. This 
+suggests that poverty and family size alone do not guarantee SNAP enrollment, and 
+there may be other barriers keeping eligible families from accessing the program.

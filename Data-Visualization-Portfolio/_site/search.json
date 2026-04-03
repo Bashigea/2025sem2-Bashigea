@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data-Visualization-Portfolio",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nMedian Household Income in Hennepin County\n\n\n\ndata visualization\n\nmaps\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
+    "text": "SNAP Household Size & Children by Poverty Level\n\n\n\ndata visualization\n\nSNAP\n\npoverty\n\n\n\n\n\n\n\n\n\nApr 3, 2026\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nMedian Household Income in Hennepin County\n\n\n\ndata visualization\n\nmaps\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/01_post-with-code/index.html",
@@ -54,5 +54,75 @@
     "title": "Median Household Income in Hennepin County",
     "section": "Key Takeaways",
     "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#code",
+    "href": "posts/01_my-second-code/index.html#code",
+    "title": "Weekly Huddle 5",
+    "section": "Code",
+    "text": "Code"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#key-questions-we-are-focusing-on",
+    "href": "posts/01_my-second-code/index.html#key-questions-we-are-focusing-on",
+    "title": "Weekly Huddle 5",
+    "section": "Key questions we are focusing on …",
+    "text": "Key questions we are focusing on …\nWe are focusing on the correlation between household size and snap participation"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#a-success",
+    "href": "posts/01_my-second-code/index.html#a-success",
+    "title": "Weekly Huddle 5",
+    "section": "A Success",
+    "text": "A Success\nWe found a data set that included household data, and made a visualization by joining the Hennepin County data set."
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#a-challenge",
+    "href": "posts/01_my-second-code/index.html#a-challenge",
+    "title": "Weekly Huddle 5",
+    "section": "A Challenge",
+    "text": "A Challenge\nA challenge that we had was trying to figure out how to integrate this new data set into our Hennepin County data. We also wanted to run a logistic regression with this data set and our past demographics data set, but it was hard to join these two because there were so many variables and differences in the data sets."
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#how-we-will-resolve-the-challenge-we-need-help-with",
+    "href": "posts/01_my-second-code/index.html#how-we-will-resolve-the-challenge-we-need-help-with",
+    "title": "Weekly Huddle 5",
+    "section": "How we will resolve the challenge / we need help with …",
+    "text": "How we will resolve the challenge / we need help with …\nFor the next weekly huddle, we plan to run a logistic regression using our past demographics data and this new data set. We will run two separate regressions, and then see if there is a way of making the data uniform to include both variables."
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html",
+    "href": "posts/01_my-second-code/index.html",
+    "title": "SNAP Household Size & Children by Poverty Level",
+    "section": "",
+    "text": "This visualization explores how household size and children share relate to SNAP enrollment across Hennepin County neighborhoods in 2024. We split neighborhoods into four poverty groups to see how these patterns change as poverty increases.\nThe key question we are trying to answer is:\nAre larger and poorer families actually enrolling in SNAP at the rates we would expect?"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#overview",
+    "href": "posts/01_my-second-code/index.html#overview",
+    "title": "SNAP Household Size & Children by Poverty Level",
+    "section": "",
+    "text": "This visualization explores how household size and children share relate to SNAP enrollment across Hennepin County neighborhoods in 2024. We split neighborhoods into four poverty groups to see how these patterns change as poverty increases.\nThe key question we are trying to answer is:\nAre larger and poorer families actually enrolling in SNAP at the rates we would expect?"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#visualization",
+    "href": "posts/01_my-second-code/index.html#visualization",
+    "title": "SNAP Household Size & Children by Poverty Level",
+    "section": "Visualization",
+    "text": "Visualization"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#how-to-read-this-plot",
+    "href": "posts/01_my-second-code/index.html#how-to-read-this-plot",
+    "title": "SNAP Household Size & Children by Poverty Level",
+    "section": "How to Read This Plot",
+    "text": "How to Read This Plot\nThe plot is split into four panels from left to right based on poverty level — Q1 is the least poor and Q4 is the most poor.\n\nX axis — what percentage of SNAP recipients in that neighborhood are children. Higher means more kids are getting SNAP\nY axis — average household size. Higher means bigger families are on SNAP\nDashed line — the county average household size of 2.27 people per household\nDot color — the SNAP take-up rate. Light blue means few eligible people are enrolling, while orange and red means most eligible people are enrolling\nDot size — how many SNAP cases are in that neighborhood"
+  },
+  {
+    "objectID": "posts/01_my-second-code/index.html#key-finding",
+    "href": "posts/01_my-second-code/index.html#key-finding",
+    "title": "SNAP Household Size & Children by Poverty Level",
+    "section": "Key Finding",
+    "text": "Key Finding\nAs poverty increases from Q1 to Q4, households get larger and have more children. However, the dots in Q4 are mostly blue — meaning even the poorest neighborhoods with the biggest families are not enrolling at the rates we would expect. This suggests that poverty and family size alone do not guarantee SNAP enrollment, and there may be other barriers keeping eligible families from accessing the program."
   }
 ]

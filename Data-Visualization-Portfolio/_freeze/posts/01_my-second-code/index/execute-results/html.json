@@ -1,0 +1,17 @@
+{
+  "hash": "36b25cf2672f5892f9f3d7c0ffba5fcb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"SNAP Household Size & Children by Poverty Level\"\nauthor: \"Armand Bashige\"\ndate: \"2026-04-03\"\ncategories: [data visualization, SNAP, poverty]\n---\n\n\n::: {.cell}\n\n:::\n\n\n## Overview\n\nThis visualization explores how household size and children share relate to SNAP \nenrollment across Hennepin County neighborhoods in 2024. We split neighborhoods \ninto four poverty groups to see how these patterns change as poverty increases.\n\nThe key question we are trying to answer is:\n\n**Are larger and poorer families actually enrolling in SNAP at the rates we would expect?**\n\n---\n\n## Visualization\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n## How to Read This Plot\n\nThe plot is split into four panels from left to right based on poverty level — \nQ1 is the least poor and Q4 is the most poor.\n\n- **X axis** — what percentage of SNAP recipients in that neighborhood are children. \nHigher means more kids are getting SNAP\n- **Y axis** — average household size. Higher means bigger families are on SNAP\n- **Dashed line** — the county average household size of 2.27 people per household\n- **Dot color** — the SNAP take-up rate. Light blue means few eligible people are \nenrolling, while orange and red means most eligible people are enrolling\n- **Dot size** — how many SNAP cases are in that neighborhood\n\n## Key Finding\n\nAs poverty increases from Q1 to Q4, households get larger and have more children. \nHowever, the dots in Q4 are mostly blue — meaning even the poorest neighborhoods \nwith the biggest families are not enrolling at the rates we would expect. This \nsuggests that poverty and family size alone do not guarantee SNAP enrollment, and \nthere may be other barriers keeping eligible families from accessing the program.",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
