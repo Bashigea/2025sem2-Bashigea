@@ -3,8 +3,8 @@
     "objectID": "posts/02_reworked-visualization/index.html#overview",
     "href": "posts/02_reworked-visualization/index.html#overview",
     "title": "Where Is the SNAP Enrollment Gap?",
-    "section": "Overview",
-    "text": "Overview\nThis is a reworked version of my earlier SNAP visualization. In the previous post, I looked at household size and children share across poverty quartiles — but those variables turned out not to be significant predictors of enrollment gaps. This visualization corrects that by asking a better question:\nWhich census tracts are enrolling fewer people than their poverty level predicts, and does this problem exist across all poverty levels or only in the poorest tracts?"
+    "section": "",
+    "text": "This is a reworked version of my earlier SNAP visualization. In the previous post, I looked at household size and children share across poverty quartiles — but those variables turned out not to be significant predictors of enrollment gaps. This visualization corrects that by asking a better question:\nWhich census tracts are enrolling fewer people than their poverty level predicts, and does this problem exist across all poverty levels or only in the poorest tracts?"
   },
   {
     "objectID": "posts/02_reworked-visualization/index.html#visualization",
@@ -117,5 +117,12 @@
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/02_reworked-visualization/index.html",
+    "href": "posts/02_reworked-visualization/index.html",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "",
+    "text": "This is a reworked version of my earlier SNAP visualization. In the previous post, I looked at household size and children share across poverty quartiles — but those variables turned out not to be significant predictors of enrollment gaps. This visualization corrects that by asking a better question:\nWhich census tracts are enrolling fewer people than their poverty level predicts, and does this problem exist across all poverty levels or only in the poorest tracts?"
   }
 ]
