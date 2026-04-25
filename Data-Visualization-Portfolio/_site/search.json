@@ -1,94 +1,38 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data-Visualization-Portfolio",
-    "section": "",
-    "text": "SNAP Household Size & Children by Poverty Level\n\n\n\ndata visualization\n\nSNAP\n\npoverty\n\n\n\n\n\n\n\n\n\nApr 3, 2026\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nMedian Household Income in Hennepin County\n\n\n\ndata visualization\n\nmaps\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/02_reworked-visualization/index.html#overview",
+    "href": "posts/02_reworked-visualization/index.html#overview",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "Overview",
+    "text": "Overview\nThis is a reworked version of my earlier SNAP visualization. In the previous post, I looked at household size and children share across poverty quartiles — but those variables turned out not to be significant predictors of enrollment gaps. This visualization corrects that by asking a better question:\nWhich census tracts are enrolling fewer people than their poverty level predicts, and does this problem exist across all poverty levels or only in the poorest tracts?"
   },
   {
-    "objectID": "posts/01_post-with-code/index.html",
-    "href": "posts/01_post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "objectID": "posts/02_reworked-visualization/index.html#visualization",
+    "href": "posts/02_reworked-visualization/index.html#visualization",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "Visualization",
+    "text": "Visualization"
   },
   {
-    "objectID": "posts/00_welcome/index.html",
-    "href": "posts/00_welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Welcome to my Data Visualization Portfolio! I’m Armand, a senior at Augsburg University studying Computer Science with minors in Data Science and Mathematics.\nThis blog will showcase my work in data visualization, exploring how data-driven approaches can be applied to real-world challenges. Stay tuned for projects highlighting everything from exploratory data analysis to interactive visualizations.\nOptional: You can publish this to your own github, although it does take some work. Some information is found here: LINK\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "posts/02_reworked-visualization/index.html#how-to-read-this-plot",
+    "href": "posts/02_reworked-visualization/index.html#how-to-read-this-plot",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "How to Read This Plot",
+    "text": "How to Read This Plot\nThe plot is split into four panels from left to right based on poverty level — Q1 is the least poor and Q4 is the most poor.\n\nX axis — the number of people living at or below 125% of the poverty line in that census tract (log scale so small and large tracts are both visible)\nY axis — the combined SNAP and MFIP take-up rate. Higher means more eligible people are actually enrolling\nDot color — red tracts are enrolling fewer people than a regression model predicts given their poverty level. Blue tracts are enrolling at or above expectations\nPanels — splitting by poverty quartile lets us see whether underenrollment is only a high-poverty problem or whether it shows up everywhere"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Armand Bashige",
-    "section": "",
-    "text": "I am a senior at Augsburg University pursuing a Bachelor’s degree in Computer Science with minors in Data Science and Mathematics. I am passionate about leveraging my problem-solving skills to develop innovative solutions that create meaningful impact. With a strong foundation in Python and Java, I have hands-on experience implementing data structures, algorithms, and core software development principles. I am particularly interested in building efficient, scalable systems and applying data-driven approaches to real-world challenges."
+    "objectID": "posts/02_reworked-visualization/index.html#what-changed-from-the-previous-version",
+    "href": "posts/02_reworked-visualization/index.html#what-changed-from-the-previous-version",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "What Changed From the Previous Version",
+    "text": "What Changed From the Previous Version\nIn my earlier post (01_my-second-code) I visualized household size and children share across the same four poverty quartiles. However, those variables were tested in a regression model and found to be statistically insignificant (p = 0.770 and p = 0.539 respectively). This reworked version instead uses a regression-based enrollment gap to correctly identify which tracts are underenrolling relative to what their poverty level would predict."
   },
   {
-    "objectID": "posts/01_my-first-code/index.html",
-    "href": "posts/01_my-first-code/index.html",
-    "title": "Median Household Income in Hennepin County",
-    "section": "",
-    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
-  },
-  {
-    "objectID": "posts/01_my-first-code/index.html#overview",
-    "href": "posts/01_my-first-code/index.html#overview",
-    "title": "Median Household Income in Hennepin County",
-    "section": "",
-    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
-  },
-  {
-    "objectID": "posts/01_my-first-code/index.html#key-takeaways",
-    "href": "posts/01_my-first-code/index.html#key-takeaways",
-    "title": "Median Household Income in Hennepin County",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
-  },
-  {
-    "objectID": "posts/01_my-first-code/index.html#key-takeaways-1",
-    "href": "posts/01_my-first-code/index.html#key-takeaways-1",
-    "title": "Median Household Income in Hennepin County",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
-  },
-  {
-    "objectID": "posts/01_my-second-code/index.html#code",
-    "href": "posts/01_my-second-code/index.html#code",
-    "title": "Weekly Huddle 5",
-    "section": "Code",
-    "text": "Code"
-  },
-  {
-    "objectID": "posts/01_my-second-code/index.html#key-questions-we-are-focusing-on",
-    "href": "posts/01_my-second-code/index.html#key-questions-we-are-focusing-on",
-    "title": "Weekly Huddle 5",
-    "section": "Key questions we are focusing on …",
-    "text": "Key questions we are focusing on …\nWe are focusing on the correlation between household size and snap participation"
-  },
-  {
-    "objectID": "posts/01_my-second-code/index.html#a-success",
-    "href": "posts/01_my-second-code/index.html#a-success",
-    "title": "Weekly Huddle 5",
-    "section": "A Success",
-    "text": "A Success\nWe found a data set that included household data, and made a visualization by joining the Hennepin County data set."
-  },
-  {
-    "objectID": "posts/01_my-second-code/index.html#a-challenge",
-    "href": "posts/01_my-second-code/index.html#a-challenge",
-    "title": "Weekly Huddle 5",
-    "section": "A Challenge",
-    "text": "A Challenge\nA challenge that we had was trying to figure out how to integrate this new data set into our Hennepin County data. We also wanted to run a logistic regression with this data set and our past demographics data set, but it was hard to join these two because there were so many variables and differences in the data sets."
-  },
-  {
-    "objectID": "posts/01_my-second-code/index.html#how-we-will-resolve-the-challenge-we-need-help-with",
-    "href": "posts/01_my-second-code/index.html#how-we-will-resolve-the-challenge-we-need-help-with",
-    "title": "Weekly Huddle 5",
-    "section": "How we will resolve the challenge / we need help with …",
-    "text": "How we will resolve the challenge / we need help with …\nFor the next weekly huddle, we plan to run a logistic regression using our past demographics data and this new data set. We will run two separate regressions, and then see if there is a way of making the data uniform to include both variables."
+    "objectID": "posts/02_reworked-visualization/index.html#key-finding",
+    "href": "posts/02_reworked-visualization/index.html#key-finding",
+    "title": "Where Is the SNAP Enrollment Gap?",
+    "section": "Key Finding",
+    "text": "Key Finding\nUnderenrollment is not just a high-poverty problem — red tracts appear in every quartile from Q1 to Q4. This means that even in neighborhoods with relatively low poverty, some tracts are still not enrolling as many people as expected. The problem is widespread across Hennepin County and cannot be solved by targeting only the poorest neighborhoods."
   },
   {
     "objectID": "posts/01_my-second-code/index.html",
@@ -124,5 +68,54 @@
     "title": "SNAP Household Size & Children by Poverty Level",
     "section": "Key Finding",
     "text": "Key Finding\nAs poverty increases from Q1 to Q4, households get larger and have more children. However, the dots in Q4 are mostly blue — meaning even the poorest neighborhoods with the biggest families are not enrolling at the rates we would expect. This suggests that poverty and family size alone do not guarantee SNAP enrollment, and there may be other barriers keeping eligible families from accessing the program."
+  },
+  {
+    "objectID": "posts/00_welcome/index.html",
+    "href": "posts/00_welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Welcome to my Data Visualization Portfolio! I’m Armand, a senior at Augsburg University studying Computer Science with minors in Data Science and Mathematics.\nThis blog will showcase my work in data visualization, exploring how data-driven approaches can be applied to real-world challenges. Stay tuned for projects highlighting everything from exploratory data analysis to interactive visualizations.\nOptional: You can publish this to your own github, although it does take some work. Some information is found here: LINK\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Armand Bashige",
+    "section": "",
+    "text": "I am a senior at Augsburg University pursuing a Bachelor’s degree in Computer Science with minors in Data Science and Mathematics. I am passionate about leveraging my problem-solving skills to develop innovative solutions that create meaningful impact. With a strong foundation in Python and Java, I have hands-on experience implementing data structures, algorithms, and core software development principles. I am particularly interested in building efficient, scalable systems and applying data-driven approaches to real-world challenges."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data-Visualization-Portfolio",
+    "section": "",
+    "text": "Median Household Income in Hennepin County\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSNAP Household Size & Children by Poverty Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere Is the SNAP Enrollment Gap?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 22, 2025\n\n\nArmand Bashige\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 14, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html",
+    "href": "posts/01_my-first-code/index.html",
+    "title": "Median Household Income in Hennepin County",
+    "section": "",
+    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html#overview",
+    "href": "posts/01_my-first-code/index.html#overview",
+    "title": "Median Household Income in Hennepin County",
+    "section": "",
+    "text": "This visualization explores the distribution of median household income across zip codes in Hennepin County, Minnesota. Using a choropleth map, we can see how income levels vary geographically throughout the county."
+  },
+  {
+    "objectID": "posts/01_my-first-code/index.html#key-takeaways",
+    "href": "posts/01_my-first-code/index.html#key-takeaways",
+    "title": "Median Household Income in Hennepin County",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nThe map reveals notable income disparities across Hennepin County. Western suburbs tend to show higher median household incomes, while areas closer to downtown Minneapolis show more variation. This type of geographic visualization helps highlight spatial patterns in economic data that might not be obvious from tables or summary statistics alone."
+  },
+  {
+    "objectID": "posts/01_post-with-code/index.html",
+    "href": "posts/01_post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
   }
 ]

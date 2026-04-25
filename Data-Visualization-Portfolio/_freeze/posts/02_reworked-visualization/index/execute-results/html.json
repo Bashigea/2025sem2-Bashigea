@@ -1,0 +1,17 @@
+{
+  "hash": "8e0fd53b6c4e50793666ad0c4b1d122d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "### File: index.qmd\n### Author: Armand Bashige\n### Portfolio: Data Visualization Portfolio — Reworked SNAP Enrollment Gap\n### Purpose: Reworked visualization showing where SNAP/MFIP enrollment gaps exist\n###          across Hennepin County census tracts by poverty quartile (2023-2025)\n### Data: HennepinCounty_SNAP_MFIP_Estimates_Tract_RevA.csv (private)\n### Last updated: 2026-04-25\n\n---\ntitle: \"Where Is the SNAP Enrollment Gap?\"\nauthor: \"Armand Bashige\"\ndate: \"2026-04-25\"\ncategories: [data visualization, SNAP, poverty]\n---\n\n\n::: {.cell}\n\n:::\n\n\n## Overview\n\nThis is a reworked version of my earlier SNAP visualization. In the previous post,\nI looked at household size and children share across poverty quartiles — but those\nvariables turned out not to be significant predictors of enrollment gaps. This\nvisualization corrects that by asking a better question:\n\n**Which census tracts are enrolling fewer people than their poverty level predicts,\nand does this problem exist across all poverty levels or only in the poorest tracts?**\n\n---\n\n## Visualization\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n## How to Read This Plot\n\nThe plot is split into four panels from left to right based on poverty level —\nQ1 is the least poor and Q4 is the most poor.\n\n- **X axis** — the number of people living at or below 125% of the poverty line\nin that census tract (log scale so small and large tracts are both visible)\n- **Y axis** — the combined SNAP and MFIP take-up rate. Higher means more eligible\npeople are actually enrolling\n- **Dot color** — red tracts are enrolling fewer people than a regression model\npredicts given their poverty level. Blue tracts are enrolling at or above expectations\n- **Panels** — splitting by poverty quartile lets us see whether underenrollment\nis only a high-poverty problem or whether it shows up everywhere\n\n## What Changed From the Previous Version\n\nIn my earlier post (`01_my-second-code`) I visualized household size and children\nshare across the same four poverty quartiles. However, those variables were tested\nin a regression model and found to be statistically insignificant (p = 0.770 and\np = 0.539 respectively). This reworked version instead uses a regression-based\nenrollment gap to correctly identify which tracts are underenrolling relative to\nwhat their poverty level would predict.\n\n## Key Finding\n\nUnderenrollment is not just a high-poverty problem — red tracts appear in every\nquartile from Q1 to Q4. This means that even in neighborhoods with relatively\nlow poverty, some tracts are still not enrolling as many people as expected. The\nproblem is widespread across Hennepin County and cannot be solved by targeting\nonly the poorest neighborhoods.",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
