@@ -1,3 +1,11 @@
+### File: index.qmd
+### Author: Armand Bashige
+### Portfolio: Data Visualization Portfolio — Post 01_my-second-code
+### Purpose: Visualize how household size and children share relate to SNAP
+###          enrollment across Hennepin County tracts, broken out by poverty level
+### Data: HennepinCounty_SNAP_MFIP_Estimates_Tract_RevA.csv
+### Last updated: 2026-04-03
+
 ---
 title: "SNAP Household Size & Children by Poverty Level"
 author: "Armand Bashige"
@@ -9,6 +17,8 @@ categories: [data visualization, SNAP, poverty]
 #| echo: false
 #| message: false
 #| warning: false
+#| 
+# Load required libraries for data wrangling and visualization
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
@@ -33,7 +43,8 @@ The key question we are trying to answer is:
 #| message: false
 #| warning: false
 
-# Load the Hennepin County SNAP dataset
+# Load the Hennepin County SNAP dataset ------------------------------------------------
+
 df <- read.csv("../../../../hennepin-county-data-project-2026-tai/data_private/HennepinCounty_SNAP_MFIP_Estimates_Tract_RevA.csv")
 
 # Convert columns to numeric and extract year
@@ -42,7 +53,10 @@ df$SNAP_people_n   <- as.numeric(df$SNAP_people)
 df$SNAP_children_n <- as.numeric(df$SNAP_children)
 df$Year            <- df$YearMonth %/% 100
 
-# Aggregate to annual tract averages
+# Aggregate to annual tract averages ----------------------------------------
+# Collapse monthly observations into one annual average per census tract
+# p_125_povertyE = estimated population living at or below 125% of the poverty line
+
 annual <- df |>
   group_by(GIS_Tract, Year) |>
   summarise(
@@ -52,19 +66,27 @@ annual <- df |>
     poverty_pop   = mean(p_125_povertyE,  na.rm = TRUE),
     .groups = "drop"
   ) |>
+  # Remove tracts missing any key variable
   filter(!is.na(SNAP_cases), !is.na(SNAP_people),
          !is.na(SNAP_children), !is.na(poverty_pop))
 
-# Calculate derived variables
+# Calculate derived variables -----------------------------------------------
+# Average number of people per SNAP household (implied household size)
 annual$snap_hh_size     <- annual$SNAP_people   / ifelse(annual$SNAP_cases  == 0, NA, annual$SNAP_cases)
+
+# Share of SNAP recipients who are children (0 to 1 scale)
 annual$children_share   <- annual$SNAP_children / ifelse(annual$SNAP_people == 0, NA, annual$SNAP_people)
+
+# SNAP take-up rate: SNAP cases divided by poverty population
+# Values > 1 are possible due to estimation differences between data sources
 annual$snap_per_poverty <- annual$SNAP_cases    / ifelse(annual$poverty_pop == 0, NA, annual$poverty_pop)
 
-# Filter to 2024 and build poverty quartile labels
+# Filter to 2024 and build poverty quartile labels -------------------------
 df_2024 <- annual |>
   filter(Year == 2024) |>
   filter(!is.na(snap_hh_size), !is.na(children_share)) |>
   mutate(
+    # Divide tracts into 4 equal groups based on poverty population (ntile = quartile)
     pov_q     = ntile(poverty_pop, 4),
     pov_label = case_when(
       pov_q == 1 ~ "Q1 Low poverty",
@@ -72,27 +94,33 @@ df_2024 <- annual |>
       pov_q == 3 ~ "Q3",
       pov_q == 4 ~ "Q4 High poverty"
     ),
+    # Set factor order so panels display left to right from lowest to highest poverty
     pov_label = factor(pov_label, levels = c("Q1 Low poverty","Q2","Q3","Q4 High poverty")),
     snap_take_up = pmin(snap_per_poverty, 1.5)
   )
 
-# Plot
+# Build the Plot -------------------------------------------------------------
+
 ggplot(df_2024, aes(x = children_share * 100, y = snap_hh_size,
                     color = snap_take_up, size = SNAP_cases)) +
   geom_point(alpha = 0.6) +
+  # Dashed reference line at ACS county average household size (2.27)
   geom_hline(yintercept = 2.27, linetype = "dashed", color = "#555555",
              linewidth = 0.5, alpha = 0.5) +
+  # Color gradient: light blue (low take-up) to blue to orange to dark red (high take-up)
   scale_color_gradientn(
     colors = c("lightblue", "blue", "orangered", "brown4"),
     name   = "SNAP cases\nper poverty\npopulation",
     limits = c(0, 1.5),
     labels = c("0", "0.5", "1.0", "1.5+")
   ) +
+  # Dot size reflects total monthly SNAP cases in that tract
   scale_size_continuous(
     name   = "Monthly\nSNAP cases",
     range  = c(0.8, 6),
     breaks = c(50, 200, 600)
   ) +
+  # One panel per poverty quartile, displayed in a single row
   facet_wrap(~pov_label, nrow = 1) +
   labs(
     title = "SNAP Household Size & Children by Poverty Levels (2024)",
