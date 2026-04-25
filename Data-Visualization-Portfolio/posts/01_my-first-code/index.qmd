@@ -1,3 +1,11 @@
+### File: index.qmd
+### Author: Armand Bashige
+### Portfolio: Data Visualization Portfolio — Post 01_my-first-code
+### Purpose: Visualize median household income across Hennepin County zip codes
+###          using a choropleth map to reveal geographic income disparities
+### Data: Zip_Codes shapefile (local) + zipcodeR package (Census-based income data)
+### Last updated: 2025-03-22
+
 ---
 title: "Median Household Income in Hennepin County"
 author: "Armand Bashige"
@@ -13,24 +21,40 @@ This visualization explores the distribution of median household income across z
 #| message: false
 #| warning: false
 #| output: false
-library(tidyverse)
-library(sf)
-library(zipcodeR)
-library(tmap)
 
+# Load required libraries for spatial data handling and mapping
+library(tidyverse)
+library(sf) # For reading and working with shapefiles
+library(zipcodeR) # Provides Census-based zip code demographic data
+library(tmap) # For creating thematic maps
+
+### Load and prepare spatial data ---------------------------------------------
+
+# Read the Hennepin County zip code shapefile
 zips <- st_read(dsn = "C:/Users/bashi/OneDrive/Documents/DST490/2025sem2-Bashigea/day11/shapefiles/Zip_Codes", layer = "Zip_Codes")
 
+# Pull all zip codes in Hennepin County, MN from the zipcodeR Census data
 hennepin_zips <- search_county("Hennepin","MN")
 
+# Keep only the columns needed for this visualization
 small_hennepin_zips <- hennepin_zips |>
   select(zipcode, median_household_income, post_office_city)
 
+### Join income data to spatial polygons --------------------------------------
+
+# Match income data to zip code boundaries by zip code identifier
+# st_make_valid() fixes any geometry errors in the shapefile before plotting
 zips_income <- zips |>
   left_join(small_hennepin_zips, by=c("NAME_TXT"="zipcode")) |>
   st_make_valid()
 ```
+
+## Visualization
+
 ```{r}
 #| echo: false
+# Choropleth map: zip code polygons shaded by median household income
+# Darker = higher income (tmap default color scale)
 tm_shape(zips_income) + 
   tm_polygons("median_household_income")
 ```
